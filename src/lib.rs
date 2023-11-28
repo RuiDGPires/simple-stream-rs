@@ -2,7 +2,7 @@ use std::io::{Read, BufWriter, Write};
 use std::fs::File;
 mod tests;
 
-pub trait Sourceable<I> {
+pub trait Streamable<I> {
     fn from_stream<T: InStream<I>>(stream: T) -> Result<Box<Self>, String>;
     fn to_stream<T: OutStream<I>>(&self, stream: T)  -> Result<(), String>;
 }
